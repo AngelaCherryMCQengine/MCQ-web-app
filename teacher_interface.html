@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- homepage of MCQ web app -->
+<!-- written by: Angela 01/07/2015
+	 modified by: Cherry 02/07/2015-->
+
+<html>
+	<head>
+		<meta http-equiv = "Content-Type" content = "text/html; charset = utf-8" />
+		<title>MCQ web app trial</title>
+	</head>
+
+	<body>
+		<form action="exam-paper-upload.php" method="post">
+			<h5>Q1.</h5>
+			<textarea name="ques" rows="10" cols="100" placeholder="Please enter the description of the question." maxlength="1000"></textarea>
+
+			<h5>A.</h5>
+			<textarea name="opA" rows="2" cols="100" placeholder="Please enter the description of Option A." maxlength="1000"></textarea>
+			<h5>Feedback of A:</h5>
+			<textarea name="feedA" rows="2" cols="100" placeholder="Please enter the feedback of Option A." maxlength="1000"></textarea>
+
+			<h5>B.</h5>
+			<textarea name="opB" rows="2" cols="100" placeholder="Please enter the description of Option B." maxlength="1000"></textarea>
+			<h5>Feedback of B:</h5>
+			<textarea name="feedB" rows="2" cols="100" placeholder="Please enter the feedback of Option B." maxlength="1000"></textarea>
+
+			<h5>C.</h5>
+			<textarea name="opC" rows="2" cols="100" placeholder="Please enter the description of Option C." maxlength="1000"></textarea>
+			<h5>Feedback of C:</h5>
+			<textarea name="feedC" rows="2" cols="100" placeholder="Please enter the feedback of Option C." maxlength="1000"></textarea>
+
+			<h5>D.</h5>
+			<textarea name="opD" rows="2" cols="100" placeholder="Please enter the description of Option D." maxlength="1000"></textarea>
+			<h5>Feedback of D:</h5>
+			<textarea name="feedD" rows="2" cols="100" placeholder="Please enter the feedback of Option D." maxlength="1000"></textarea>
+
+			<h5>Answer:</h5>
+			<label> <input type="radio" name="answer" value="A"/> A </label>
+			<label> <input type="radio" name="answer" value="B"/> B </label>
+			<label> <input type="radio" name="answer" value="C"/> C </label>
+			<label> <input type="radio" name="answer" value="D"/> D </label>
+			<input type="submit" value="Submit"/>
+	</form>
+	</body>
+</html>
