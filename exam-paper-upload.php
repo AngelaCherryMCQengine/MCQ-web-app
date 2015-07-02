@@ -26,12 +26,12 @@
         	{
         	    die('Error: ' . mysql_error());
         	}
- 
-        	mysql_close($con)
-    	?>
+        
+            $examID = mysql_insert_id();
+            echo "Successfully uploaded your exam paper.";
+            echo "The new exam id is " . $examID;
 
-        <?php
-            echo "Successfully uploaded Question 1.";
-        ?>
+        	mysql_close($con);
+    	?>
 	</body>
 </html>
