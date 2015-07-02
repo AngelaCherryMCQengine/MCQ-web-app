@@ -1,8 +1,0 @@
-This is the introduction of MCQ v1.0
-
-1. Database
-	This version of database consists of only 2 tables,  <Exams> and <Questions>.
-		<Exams> {examID} | examTitle | answer | quesID
-		<Questions> {quesID} | quesTitle | opA | opB | opC | opD | feedA | feedB | feedC | feedD
-
-	Each exam contains only one question and the number of options in each question is fixed as 4.
