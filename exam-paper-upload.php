@@ -27,6 +27,15 @@
         	    die('Error: ' . mysql_error());
         	}
         
+            $questionID = mysql_insert_id();
+
+            $sql = "INSERT INTO Exams(examTitle, quesID) VALUES ('$_POST[examTitle]', '$questionID')";
+
+            if(!mysql_query($sql, $con))
+            {
+                die('Error: ' . mysql_error());
+            }
+
             $examID = mysql_insert_id();
             echo "Successfully uploaded your exam paper.";
             echo "The new exam id is " . $examID;
