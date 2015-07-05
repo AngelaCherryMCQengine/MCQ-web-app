@@ -1,8 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <!-- to upload the questions posted by one teacher -->
 <!-- written by: Angela 01/07/2015
-	 modified by: Cherry 02/07/2015
--->
+	modified by: Cherry 02/07/2015 -->
 
 <html>
 	<head>
