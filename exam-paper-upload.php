@@ -18,19 +18,18 @@
         	}
  
         	mysql_select_db("MCQ-web-app", $con);
- 
-        	$sql="INSERT INTO Questions(ques,answer,opA,feedA,opB,feedB,opC,feedC,opD,feedD) VALUES ('$_POST[ques]', '$_POST[answer]', '$_POST[opA]', '$_POST[feedA]', '$_POST[opB]', '$_POST[feedB]', '$_POST[opC]', '$_POST[feedC]', '$_POST[opD]', '$_POST[feedD]')";
- 
-        	if (!mysql_query($sql,$con))
+            
+        	$sql = "INSERT INTO Questions(ques,answer,opA,feedA,opB,feedB,opC,feedC,opD,feedD) VALUES ('$_POST[ques]', '$_POST[answer]', '$_POST[opA]', '$_POST[feedA]', '$_POST[opB]', '$_POST[feedB]', '$_POST[opC]', '$_POST[feedC]', '$_POST[opD]', '$_POST[feedD]')";
+        	$result = !mysql_query($sql,$con);
+            if (!$result)
         	{
         	    die('Error: ' . mysql_error());
         	}
         
-            $questionID = mysql_insert_id();
-
-            $sql = "INSERT INTO Exams(examTitle, quesID) VALUES ('$_POST[examTitle]', '$questionID')";
-
-            if(!mysql_query($sql, $con))
+            $quesID = mysql_insert_id();
+            $sql = "INSERT INTO Exams(examTitle, quesID) VALUES ('$_POST[examTitle]', '$quesID')";
+            $result = mysql_query($sql, $con);
+            if (!$result)
             {
                 die('Error: ' . mysql_error());
             }

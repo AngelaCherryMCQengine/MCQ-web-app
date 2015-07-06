@@ -21,10 +21,9 @@
 
             $examID = $_POST['examID'];
             setcookie('examID', $examID);
-
-            $strsql = "SELECT * FROM Exams WHERE examID = " . $examID;
-
-            $result = mysql_query($strsql, $con);
+            
+            $sql = "SELECT * FROM Exams WHERE examID = " . $examID;
+            $result = mysql_query($sql, $con);
             if (!$result) {
         	   die("Error: " . mysql_error());
             }
@@ -33,9 +32,8 @@
             $quesID = $row['quesID'];
             $examTitle = $row['examTitle'];
 
-            $strsql = "SELECT * FROM Questions WHERE quesID = " . $quesID;
-
-            $result = mysql_query($strsql, $con);
+            $sql = "SELECT * FROM Questions WHERE quesID = " . $quesID;
+            $result = mysql_query($sql, $con);
             if (!$result) {
         	   die("Error: " . mysql_error());
             }

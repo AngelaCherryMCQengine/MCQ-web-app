@@ -19,16 +19,16 @@
 
 				mysql_select_db('MCQ-web-app', $con);
 
-				$strsql = "SELECT * FROM Exams WHERE examID = " . $_COOKIE['examID'];
-				$result = mysql_query($strsql, $con);
+				$sql = "SELECT * FROM Exams WHERE examID = " . $_COOKIE['examID'];
+				$result = mysql_query($sql, $con);
 				if (!$result) {
 					die("Error: " . mysql_error());
 				}
 
 				$row = mysql_fetch_array($result);
 
-				$strsql = "SELECT * FROM Questions WHERE quesID = " . $row['quesID'];
-				$result = mysql_query($strsql, $con);
+				$sql = "SELECT * FROM Questions WHERE quesID = " . $row['quesID'];
+				$result = mysql_query($sql, $con);
 				if (!$result) {
 					die('Error: ' . mysql_error());
 				}
@@ -36,26 +36,26 @@
 				$row = mysql_fetch_array($result);
 
 				if ($_POST['answer'] == $row['answer']) {
-					echo "Congratulation! You get 100 scores.";
+					echo "Correct!";
 				} elseif ($_POST['answer'] == "A") {
-				 echo "Sorry, the right answer is " . $row['answer'] . ".";
-				 $feedback = $row['feedA'];
+					$feedback = $row['feedA'];
+					echo "Sorry, the right answer is " . $row['answer'] . ".";
 				} elseif ($_POST['answer'] == "B") {
-					echo "Sorry, the right answer is " . $row['answer'] . ".";
 					$feedback = $row['feedB'];
+					echo "Sorry, the right answer is " . $row['answer'] . ".";
 				} elseif ($_POST['answer'] == "C") {
-					echo "Sorry, the right answer is " . $row['answer'] . ".";
 					$feedback = $row['feedC'];
-				} elseif ($_POST['answer'] == "D") {
 					echo "Sorry, the right answer is " . $row['answer'] . ".";
+				} elseif ($_POST['answer'] == "D") {
 					$feedback = $row['feedD'];
+					echo "Sorry, the right answer is " . $row['answer'] . ".";
 				}
 			?>
 		</h3>
 
 		<blockquote>
 			<?php
-				if (! $_POST['answer'] == $row['answer']) {
+				if (!$_POST['answer'] == $row['answer']) {
 					echo $row["feed" . $row['answer']];
 				}
 			?>
@@ -64,14 +64,14 @@
 		<p>
 			<h3>
 				<?php
-					if (! $_POST['answer'] == $row['answer']) {
+					if (!$_POST['answer'] == $row['answer']) {
 						echo "Why " . $_POST['answer'] . " is not correct: ";
 					}
 				?> 
 			</h3>
 			<blockquote>
 				<?php
-					if (! $_POST['answer'] == $row['answer']) {
+					if (!$_POST['answer'] == $row['answer']) {
 						echo $feedback;
 					}
 					mysql_close($con);
