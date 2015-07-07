@@ -55,7 +55,7 @@
 
 		<blockquote>
 			<?php
-				if ($_POST['answer'] ！= $row['answer']) {
+				if ($_POST['answer'] != $row['answer']) {
 					echo $row["feed" . $row['answer']];
 				}
 			?>
@@ -64,14 +64,14 @@
 		<p>
 			<h3>
 				<?php
-					if ($_POST['answer'] ！= $row['answer']) {
+					if ($_POST['answer'] != $row['answer']) {
 						echo "Why " . $_POST['answer'] . " is not correct: ";
 					}
 				?> 
 			</h3>
 			<blockquote>
 				<?php
-					if ($_POST['answer'] ！= $row['answer']) {
+					if ($_POST['answer'] != $row['answer']) {
 						echo $feedback;
 					}
 					mysql_close($con);

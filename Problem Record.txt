@@ -8,5 +8,5 @@ Status: unsolved
 
 Date: 06/07/2015
 Issue: escape sequences
-	Teachers' feedback including escape sequences, such as ', will cause SQL syntax error.
+	Teachers' feedback including "'" will cause SQL syntax error. New line characters will be recognized as spaces.
 Status: unsolved
