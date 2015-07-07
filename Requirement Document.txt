@@ -14,3 +14,8 @@ Date: 06/07/2015
 Function: exam result analysis tool
 	A teacher could view the percentage of students who give the correct answer on each question and also the percentages of students who give other answers respectively. A teacher could see in detail the option a specific student chooses. 
 Status: incompleted
+
+Date: 07/07/2015
+Function: Question library
+	The question should be saved into our question library if author permits. And teachers should be able to build examinations by selecting questions from the library. The questions in library should be searched by marks which is adhered to the question when it was first be edited. Teachers should be able to re-edit the questions selected from library.
+Status: incompleted
