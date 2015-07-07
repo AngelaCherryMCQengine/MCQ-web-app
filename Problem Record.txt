@@ -1,0 +1,12 @@
+MCQ web application problem record
+
+Date: 28/06/2015
+Issue: database design
+	Whether the number of options a question can hold should be limited or not. How to design a table for unlimited number of options.
+Status: unsolved
+	We now force teachers to enter exactly 4 options for each question.
+
+Date: 06/07/2015
+Issue: escape sequences
+	Teachers' feedback including escape sequences, such as ', will cause SQL syntax error.
+Status: unsolved

@@ -1,0 +1,16 @@
+MCQ web application requirement document
+
+Date: 06/07/2015
+Function: sign-up and login interfaces
+	Students and teachers sign up through the some webpage, and login through the same webpage.
+Status: incompleted
+
+Date: 06/07/2015
+Function: marking tool
+	Teachers could manually set the mark distribution to each question.
+Status: incompleted
+
+Date: 06/07/2015
+Function: exam result analysis tool
+	A teacher could view the percentage of students who give the correct answer on each question and also the percentages of students who give other answers respectively. A teacher could see in detail the option a specific student chooses. 
+Status: incompleted
