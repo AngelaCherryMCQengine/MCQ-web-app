@@ -3,19 +3,29 @@ MCQ web application requirement document
 Date: 06/07/2015
 Function: sign-up and login interfaces
 	Students and teachers sign up through the some webpage, and login through the same webpage.
-Status: incompleted
+Status: uncompleted
 
 Date: 06/07/2015
 Function: marking tool
 	Teachers could manually set the mark distribution to each question.
-Status: incompleted
+Status: uncompleted
 
 Date: 06/07/2015
 Function: exam result analysis tool
-	A teacher could view the percentage of students who give the correct answer on each question and also the percentages of students who give other answers respectively. A teacher could see in detail the option a specific student chooses. 
-Status: incompleted
+	A teacher could view the results of the exam, such as the percentage of students who give the correct answer on each question and also the percentages of students who give other answers respectively. A teacher could see in detail the option a specific student chooses. 
+Status: uncompleted
 
 Date: 07/07/2015
-Function: Question library
+Function: question library
 	The question should be saved into our question library if author permits. And teachers should be able to build examinations by selecting questions from the library. The questions in library should be searched by marks which is adhered to the question when it was first be edited. Teachers should be able to re-edit the questions selected from library.
-Status: incompleted
+Status: uncompleted
+
+Date: 10/07/2015
+Function: send-to-email tool
+	The results of the exam, for example the distribution of marks, could be automaticly sent to teachers’ and students’ email if they set so in their settings.
+Status: uncompleted
+
+Date: 10/07/2015
+Function: username verification
+	The username should be verified to be a valid email address when sign-up.
+Status: uncompleted
