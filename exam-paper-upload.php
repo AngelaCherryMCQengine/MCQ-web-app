@@ -27,7 +27,8 @@
         	}
         
             $quesID = mysql_insert_id();
-            $sql = "INSERT INTO Exams(examTitle, quesID) VALUES ('$_POST[examTitle]', '$quesID')";
+            $examPW = $_POST['examPW'];
+            $sql = "INSERT INTO Exams(examTitle, quesID, examPW) VALUES ('$_POST[examTitle]', '$quesID', '$examPW')";
             $result = mysql_query($sql, $con);
             if (!$result)
             {
@@ -37,6 +38,7 @@
             $examID = mysql_insert_id();
             echo "Successfully uploaded your exam paper.";
             echo "The new exam id is " . $examID;
+            echo "The password is " . $examPW;
 
         	mysql_close($con);
     	?>

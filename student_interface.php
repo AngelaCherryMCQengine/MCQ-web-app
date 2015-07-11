@@ -20,17 +20,25 @@
             mysql_select_db("MCQ-web-app", $con);
 
             $examID = $_POST['examID'];
-            setcookie('examID', $examID);
             
             $sql = "SELECT * FROM Exams WHERE examID = " . $examID;
             $result = mysql_query($sql, $con);
-            if (!$result) {
-        	   die("Error: " . mysql_error());
+
+            $check_existance = mysql_num_rows($result);
+            if (!$check_existance) {
+        	   die("Error: Invalid exam ID.");
             }
 
             $row = mysql_fetch_array($result);
+            $examPW = $row['examPW'];
+            if ($_POST['examPW'] != $examPW) {
+                die("Error: Invalid password.");
+            }
+
+            setcookie('examID', $examID);
+            
             $quesID = $row['quesID'];
-            $examTitle = $row['examTitle'];
+            $examTitle = $row['examTitle'];           
 
             $sql = "SELECT * FROM Questions WHERE quesID = " . $quesID;
             $result = mysql_query($sql, $con);
