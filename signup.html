@@ -1,0 +1,27 @@
+<!-- signup interface -->
+<!-- written by: Cherry 11/07/2015
+	modified by: -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset = utf-8"/>
+	<title> Sign up </title>
+</head>
+<body>
+	<h1> Sign Up </h1>
+	<form action="signup.php" method="post">
+		<label>Username: <input type="text" name="username" maxlength="15" /></label>
+		<br/> <br/>
+		<label>Password: <input type="password" name="password" maxlength="15"></label>
+		<br/> <br/>
+		User type:
+		<select name="type">
+			<option value="teacher"> teacher </option>
+			<option value="student"> student </option>
+		</select>
+		<br/> <br/>
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
