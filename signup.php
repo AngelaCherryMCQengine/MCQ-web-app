@@ -10,21 +10,43 @@
 </head>
 <body>
 	<?php
-		$con = mysql_connect("localhost", "MCQ_web_app", "password");
+		$con = mysql_connect("localhost", "MCQ-web-app", "password");
 		if (! $con) {
 			die('could not connect: ' . mysql_error());
 		}
 
-		mysql_select_db("MCQ_web_app", $con);
+		mysql_select_db("MCQ-web-app", $con);
 
 
 		$username = $_POST['username'];
 		$password = "" . $_POST['password'];
 
 		if ($_POST['userType'] == "student") {
-			$sql = "INSERT INTO Students(stuUN, stuPW) VALUES ('$_POST[username]', '$_POST[password]')";
+			$sql = "SELECT COUNT(*) FROM Students WHERE stuUN = '$_POST[username]'";
+			$exist=mysql_query($sql, $con);
+			if (!$exist) {
+				die("Error: " . mysql_error());
+			}
+
+			$array = mysql_fetch_array($exist);
+			if ($array[0] == 0) {
+				$sql = "INSERT INTO Students(stuUN, stuPW) VALUES ('$_POST[username]', '$_POST[password]')";
+			} else {
+				die("The user name has been used.");
+			}
 		} else {
-			$sql = "INSERT INTO Teachers(teaUN, teaPW) VALUES ('$_POST[username]', '$_POST[password]')";
+			$sql = "SELECT COUNT(*) FROM Teachers WHERE teaID = '$_POST[username]'";
+			$exist=mysql_query($sql, $con);
+			if (!$exist) {
+				die("Error: " . mysql_error());
+			}
+
+			$array = mysql_fetch_array($exist);
+			if ($array[0] == 0) {
+				$sql = "INSERT INTO Teachers(teaUN, teaPW) VALUES ('$_POST[username]', '$_POST[password]')";
+			} else {
+				die("The user name has been used.");
+			}
 		}
 
 		$result = mysql_query($sql, $con);
@@ -36,7 +58,7 @@
 	<h2> Hi! Welcome to MCQ-engine. </h2>
 
 	<?php
-		if ($userType == "student"):
+		if ($_POST['userType'] == "student"):
 	?>
 	
 	<form action="student_interface.html" method="post">
