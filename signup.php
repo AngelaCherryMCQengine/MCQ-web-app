@@ -20,30 +20,31 @@
 
 		$username = $_POST['username'];
 		$password = "" . $_POST['password'];
+		$userType = $_POST['userType'];
 
-		if ($_POST['userType'] == "student") {
-			$sql = "SELECT COUNT(*) FROM Students WHERE stuUN = '$_POST[username]'";
-			$exist=mysql_query($sql, $con);
+		if ($userType == "student") {
+			$sql = "SELECT COUNT(*) FROM Students WHERE stuUN = '$username'";
+			$exist = mysql_query($sql, $con);
 			if (!$exist) {
 				die("Error: " . mysql_error());
 			}
 
 			$array = mysql_fetch_array($exist);
 			if ($array[0] == 0) {
-				$sql = "INSERT INTO Students(stuUN, stuPW) VALUES ('$_POST[username]', '$_POST[password]')";
+				$sql = "INSERT INTO Students(stuUN, stuPW) VALUES ('$username', '$password')";
 			} else {
 				die("The user name has been used.");
 			}
 		} else {
-			$sql = "SELECT COUNT(*) FROM Teachers WHERE teaID = '$_POST[username]'";
-			$exist=mysql_query($sql, $con);
+			$sql = "SELECT COUNT(*) FROM Teachers WHERE teaID = '$username'";
+			$exist = mysql_query($sql, $con);
 			if (!$exist) {
 				die("Error: " . mysql_error());
 			}
 
 			$array = mysql_fetch_array($exist);
 			if ($array[0] == 0) {
-				$sql = "INSERT INTO Teachers(teaUN, teaPW) VALUES ('$_POST[username]', '$_POST[password]')";
+				$sql = "INSERT INTO Teachers(teaUN, teaPW) VALUES ('$username', '$password')";
 			} else {
 				die("The user name has been used.");
 			}
@@ -58,7 +59,7 @@
 	<h2> Hi! Welcome to MCQ-engine. </h2>
 
 	<?php
-		if ($_POST['userType'] == "student"):
+		if ($userType == "student"):
 	?>
 	
 	<form action="student_interface.html" method="post">
