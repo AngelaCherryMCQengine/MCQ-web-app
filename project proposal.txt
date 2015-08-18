@@ -1,0 +1,13 @@
+Project proposal 3:  Multiple Choice Questionnaire (MCS) System (Client/Server Web Application, written in any language you wish)
+
+Write a complete system which allows a teacher to write and submit a complete online assessments (At least MCQ, but also possibly other kinds) to be completed by students online and marked automatically, with mark reports produced for the teacher and possibly some kind of automatic feedback given to students.
+
+·       The principles behind such an applications should be simple enough to understand, so candidates choosing this project are expected to come up with their own specifications, possibly through speaking with users (teachers and students) and propose a set of useful features that would make such a software better than existing ones.
+
+·       A complete test suite should be build.
+
+·       The project should be developed in a modular, extensible manner, internally documented and programmed in a standard way so that any other keen programmer may take over the and extend the project without major difficulty.
+
+·       A full documentation should be made available for end users.
+
+·       Security and reliability should be a major concern when developing the application.
